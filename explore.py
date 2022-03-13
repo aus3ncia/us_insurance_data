@@ -11,12 +11,11 @@ locale.setlocale(locale.LC_ALL, 'us_US')
 
 csv_filepath = r"insurance.csv"
 
-
 def csv_to_dict(filepath):
     """
     Opens CSV file and converts it to dictionary, enumerates it as well.
     """
-    with open(csv_filepath, newline = '') as csv_file:
+    with open(filepath, newline = '') as csv_file:
         header = csv_file.readline().split(',')
         header = [name.strip() for name in header]
         csv_data = csv.DictReader(csv_file, fieldnames = header,  delimiter = ',')
